@@ -1,0 +1,20 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/markus/Documents/programming/cpp-projects/wordsearch/main.cpp
+iostream
+-
+fstream
+-
+chrono
+-
+vector
+-
+map
+-
+
