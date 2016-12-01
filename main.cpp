@@ -66,7 +66,6 @@ int main(int argc, char* argv[]) {
                     addCurrentWord = false;
                 }
             }
-
             if(addCurrentWord){
                 wordsFound ++;
                 foundWords[currentWordLength].push_back(str);
@@ -82,17 +81,11 @@ int main(int argc, char* argv[]) {
     }
     std::cout << "Words found: " << wordsFound << std::endl;
 
-
-
-
-
     // measure end time
     auto time = std::chrono::duration_cast<std::chrono::microseconds>(end - begin).count();
     std::cout << std::endl << "Time used = " << time << " µs" << std::endl;
     return 0;
-
 }
-
 
 void usage (void){
     std::cout << "Usage: havok_wordsearch <list of characters>" << std::endl;
