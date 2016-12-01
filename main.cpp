@@ -8,7 +8,7 @@ void usage(void);
 
 int main(int argc, char* argv[]) {
 
-    if (argc != 2) {
+    if (argc < 2) {
         usage();
         return 0;
     }
@@ -23,9 +23,14 @@ int main(int argc, char* argv[]) {
 
     int inputSize = 0;
 
-    for(char* it = argv[1]; *it; it++) {
-        inputSize++;
-        numberOfChars[*it]++;
+    for(unsigned int i = 1; i < argc; i ++){
+        for(char* it = argv[i]; *it; it++) {
+            char addChar = (char)tolower(*it);
+            if(97 <= addChar && addChar <= 122) {
+                inputSize++;
+                numberOfChars[addChar]++;
+            }
+        }
     }
 
     std::cout << "Number of Inputs: " << inputSize << " ; Input:" << std::endl;
@@ -52,7 +57,6 @@ int main(int argc, char* argv[]) {
     while (std::getline(file, str)) {
         wordNumberOfChars.clear();
         addCurrentWord = true;
-
         currentWordLength = str.length();
 
         if (currentWordLength <= inputSize) {
